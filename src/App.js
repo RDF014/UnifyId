@@ -33,7 +33,6 @@ class App extends Component {
 
   generateLongKey() {
     $.get('https://www.random.org/strings/?num=10&len=20&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new', (rawKey) => {
-      console.log('long')
       this.key += rawKey;
       this.counter++;
       this.counter === 3 ? this.generateShortKey() : this.generateLongKey();
@@ -42,7 +41,6 @@ class App extends Component {
 
   generateShortKey() {
     $.get('https://www.random.org/strings/?num=1&len=17&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new', (rawKey) => {
-      console.log('short')
       this.key += rawKey;
       this.counter = 1;
       this.refactorKey();
